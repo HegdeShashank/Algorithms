@@ -19,6 +19,18 @@ public class LinkedList {
 	  void insertAtPos(int data, int pos) {
 		  this.node = Node.insertAtPos(this.node, data, pos);
 	  }
+	  void deleteFirst() {
+		  this.node = Node.deleteFirst(this.node);
+	  }
+	  void deleteLast() {
+		  this.node = Node.deleteLast(this.node);
+	  }
+	  void deleteAtPos(int pos) {
+		  this.node = Node.deleteAtPos(this.node, pos);
+	  }
+	  void reverse() {
+		  this.node = Node.reverse(this.node);
+	  }
 	  void printList() {
 		node.printList();
 	  }

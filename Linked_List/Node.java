@@ -37,13 +37,45 @@ public class Node {
 		Node temp = node;
 		if(pos == 0)
 			return insertFront(node,data);
-		while(temp!=null && temp.next!=null && count<pos-1) {
+		while(temp!=null && temp.next!=null && count<pos) {
 			temp = temp.next;
 			count++;
 		}
 		newNode.next = temp.next;
 		temp.next = newNode;
 		return node;
+	}
+	
+	static Node deleteFirst(Node node) {
+		return node.next;
+	}
+	
+	static Node deleteLast(Node node) {
+		Node temp = node;
+		while(temp!=null && temp.next!=null && temp.next.next!=null)
+			 temp = temp.next;
+		temp.next = null;
+		return node;
+	}
+	static Node deleteAtPos(Node node, int pos) {
+		Node temp = node;
+		while(temp!=null && temp.next!=null && --pos>0) {
+			temp = temp.next;
+		}
+		temp.next = temp.next.next;
+		return node;
+	}
+	static Node reverse(Node head) {
+		Node node = head;
+		Node temp = null;
+		while(head!=null) {
+		  head = head.next;		  
+		  node.next = temp;
+		  temp = node;
+		  node = head;
+		}
+		
+		return temp;
 	}
 	public void printList()
 	{
