@@ -1,5 +1,5 @@
 
-public class LinkedList {
+public class LinkedList<I extends Number> {
 
 	Node node;
 //	Node next = Node.next(this.node);
