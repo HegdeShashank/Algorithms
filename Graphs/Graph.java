@@ -6,12 +6,16 @@ public class Graph {
     Graph(int vertex) {
         this.vertex = vertex;
         for (int i=0;i<vertex;i++) {
-            edges.add(i, (new ArrayList<Integer>()));
+            edges.add(i, (new ArrayList<>()));
         }
     }
 
     void addEdge(int start, int end) {
         edges.get(start).add(end);
+    }
+
+    void invertGraph() {
+
     }
 
     ArrayList<Integer> getAllConnectedVertexes(int source) {
